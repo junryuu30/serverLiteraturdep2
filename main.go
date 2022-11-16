@@ -6,6 +6,7 @@ import (
 	"literature/pkg/mysql"
 	"literature/routes"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -38,8 +39,9 @@ func main() {
 	fmt.Println("server running localhost:5000")
 
 	// http.ListenAndServe("localhost:5000", r)
-	var port = "5000"
-	fmt.Println("server running localhost:" + port)
-	http.ListenAndServe("localhost:"+port, handlers.CORS(AllowedHeaders, AllowedMethods, AllowedOrigins)(r))
+	// var port = "5000"
+	var port = os.Getenv("PORT")
+	// fmt.Println("server running localhost:" + port)
+	http.ListenAndServe(":"+port, handlers.CORS(AllowedHeaders, AllowedMethods, AllowedOrigins)(r))
 
 }
