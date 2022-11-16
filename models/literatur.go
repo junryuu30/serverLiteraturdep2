@@ -6,7 +6,7 @@ type Literatur struct {
 	UserID             int                  `json:"user_id"`
 	User               UsersProfileResponse `json:"user"`
 	PublicationDate    string               `json:"publicationdate" form:"publication_date" gorm:"type: varchar(255)"`
-	Pages              int                  `json:"pages" form:"pages" gorm:"type: varchar(255)"`
+	Pages              int                  `json:"pages" form:"pages"`
 	ISBN               string               `json:"isbn" form:"isbn" gorm:"type: varchar(255)"`
 	Author             string               `json:"author" form:"author" gorm:"type: varchar(255)"`
 	Attache            string               `json:"attache" form:"attache" gorm:"type: varchar(255)"`
